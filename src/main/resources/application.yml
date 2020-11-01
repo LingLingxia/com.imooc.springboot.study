@@ -1,0 +1,29 @@
+spring:
+    profiles:
+        active: prod
+    application:
+        name: imooc-spring-study
+server:
+#    servlet:
+#        context-path: /imooc-dev
+    port: 8000
+
+imooc:
+    springboot:
+        version: 2.1,2.1.4
+        name: study
+management:
+    endpoint:
+        shutdown:
+            enabled: true #最特殊的一个监控断点，一般不会开启
+    endpoints:
+        web:
+            exposure:
+                include: "*" #打开所有的监控点
+
+# /imooc-prod/actuator/health
+info:
+    app:
+        name: imooc-spring-study
+        groupId: com.imooc.springboot.study
+        version: 1.0-SNAPSHOT
